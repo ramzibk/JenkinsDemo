@@ -1,8 +1,17 @@
 pipeline {
-agent any
+	agent any
 
-stages {
-stage ('Build') {
-}
-}
+	stages {
+		stage ('Build') {
+			steps {
+				sh "mvn spring-boot:build"
+			}
+		}
+		
+		stage ('tEST') {
+			steps {
+				sh "mvn spring-boot:test"
+			}
+		}
+	}
 }
