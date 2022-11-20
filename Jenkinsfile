@@ -4,11 +4,11 @@ pipeline {
 	stages {
 		stage ('Build') {
 			steps {
-				sh "mvn spring-boot:build"
+				sh "mvn spring-boot:install -DskipTests"
 			}
 		}
 		
-		stage ('tEST') {
+		stage ('Test') {
 			steps {
 				sh "mvn spring-boot:test"
 			}
